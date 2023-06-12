@@ -1,0 +1,10 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "title": "This is my first post",
+            "content": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system",
+            "photo": "https://media.istockphoto.com/id/1342418985/photo/portrait-of-successful-female-business-team-in-office.jpg?s=170667a&w=0&k=20&c=j49RNtodN8WLYIM4Gt3c3hJGMofD09aJHVOxxnwJ8pM="
+        }
+    ]
+}
