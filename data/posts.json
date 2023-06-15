@@ -5,6 +5,12 @@
       "photo": "https://demo.essentialplugin.com/prodemo/wp-content/uploads/2019/06/team-4.jpg",
       "content": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected",
       "id": 1
+    },
+    {
+      "title": "This is second Post",
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxfq3dneguiF8RGj4tlXJ7jIlBy8IgUcE03dT8hdyeufGA5rH98fiNEJVTjCwdhb3aHfk&usqp=CAU",
+      "content": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected",
+      "id": 2
     }
   ]
 }

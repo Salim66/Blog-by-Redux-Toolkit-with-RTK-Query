@@ -6,11 +6,13 @@ export const postSlice = apiSlice.injectEndpoints({
     endpoints: (builder) => ({
         getAllPosts: builder.query({
             query: () => "/posts",
-            providesTags: ["Posts"]
+            providesTags: ["Posts"],
+            keepUnusedDataFor: 300
         }),
         getSinglePost: builder.query({
             query: (id) => `/posts/${id}`,
-            providesTags: ["SinglePost"]
+            providesTags: ["SinglePost"],
+            keepUnusedDataFor: 300
         }),
         deletePost: builder.mutation({
             query: (id) => ({
