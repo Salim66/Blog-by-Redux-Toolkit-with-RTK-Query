@@ -6,12 +6,12 @@ export const postSlice = apiSlice.injectEndpoints({
     endpoints: (builder) => ({
         getAllPosts: builder.query({
             query: () => "/posts",
-            providesTags: ["Posts"],
+            providesTags: (result, error, arg) => ["Posts"],
             keepUnusedDataFor: 300
         }),
         getSinglePost: builder.query({
             query: (id) => `/posts/${id}`,
-            providesTags: ["SinglePost"],
+            providesTags: (result, error, arg) => [{type: "SinglePost", id: arg}],
             keepUnusedDataFor: 300
         }),
         deletePost: builder.mutation({
@@ -19,7 +19,15 @@ export const postSlice = apiSlice.injectEndpoints({
                 url: `/posts/${id}`,
                 method: "DELETE"
             }),
-            invalidatesTags: ["Posts"]
+            invalidatesTags: (result, error, arg) => ["Posts"]
+        }),
+        updatePost: builder.mutation({
+            query: (data) => ({
+                url: `/posts/${data.id}`,
+                method: "PUT",
+                body: data
+            }),
+            invalidatesTags: (result, error, arg) => ["Posts", "SinglePost"]
         }),
         createPost: builder.mutation({
             query: (data) => ({
@@ -27,7 +35,7 @@ export const postSlice = apiSlice.injectEndpoints({
                 method: "POST",
                 body: data
             }),
-            invalidatesTags: ["Posts"]
+            invalidatesTags: (result, error, arg) => ["Posts"]
         })
     })
 });
@@ -37,5 +45,6 @@ export const {
     useGetAllPostsQuery,
     useGetSinglePostQuery,
     useDeletePostMutation,
+    useUpdatePostMutation,
     useCreatePostMutation
  } = postSlice

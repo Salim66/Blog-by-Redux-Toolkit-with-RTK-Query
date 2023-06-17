@@ -30,6 +30,7 @@ const Posts = () => {
                                     <h2>{ post?.title }</h2>
                                     <p>{ post?.content }</p>
                                     <Link to={`/${post?.id}`} className='btn btn-primary' >Read More</Link>
+                                    <Link to={`/edit/${post?.id}`} className='btn btn-success' >Edit</Link>
                                     <button onClick={() => handleDelete(post?.id)} className='btn btn-danger' >Delete</button>
                                 </div>
                             </div>
